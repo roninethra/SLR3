@@ -1,0 +1,82 @@
+<html>
+
+<head>
+  <title>Sign Language Recognizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <center>
+      <h2 class="btn btn-warning heading"> SIGN LANGUAGE RECOGNIZER
+        <br>
+        <span> &#9994;</span>
+        <span> &#9995;</span>
+        <span> &#128076;</span>
+        <span> &#128077;</span>
+        <span> &#128078;</span>
+        <span> &#129304;</span>
+      </h2>
+
+      <br><br>
+
+      <h2 style="font-size: 22px;">TAKE A PICTURE OF YOUR HAND MAKING OUT A SIGN TO KNOW ITS MEANING
+      </h2>
+      <p style="font-size: 18px;">On the following gestures the model is trained - </p>
+      <p style="font-size: 30px;">
+        👌 | 👍 | ✌ | &#128078; | &#129304;
+      </p>
+
+      <div id= "webcam" class= "col-md-4 col-sm-8 col-xs-12">
+        <label>Webcam-</label>
+        <br><br>
+        <div id="camera"></div>
+        <br><br>
+        <button class= "buttons" onclick= "takepicture()">Capture Sign Language Gesture</button>
+      </div>
+      
+      <div id= "predictions" class= "col-md-4 col-sm-8 col-xs-12">
+        <label>Prediction 1- </label>
+      <br><br>
+      <label id= "emotiondisplayforprediction1" class= "emotion_name">Cool!</label>
+      <br><br>
+      <label id= "emojidisplayforprediction1" class= "emoji">&#129304;</label>
+      <br><br>
+      <label>Prediction 2- </label>
+      <br><br>
+      <label id= "emotiondisplayforprediction2" class= "emotion_name">Bad:(</label>
+      <br><br>
+      <label id= "emojidisplayforprediction2" class= "emoji">&#128078;</label>
+      </div>
+
+      <div class="col-md-4 col-sm-8 col-xs-12">
+        <label>Snapshot - </label>
+
+        <br><br>
+        
+        <div id= "result">
+          
+        </div>
+        <br><br>
+        <button class= "buttons" id= "predict emotion" onclick= "check()">Predict Sign Language Gesture</button>
+        <button class= "btn-success" id= "emotion_speech" onclick= "speak()">Speak Gesture</button>
+      </div>
+
+    </center>
+
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
